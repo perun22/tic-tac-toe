@@ -8,9 +8,18 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <h1 class="turn"></h1>
+    <main class="container">
+      <h1 class="title">TIC TAC TOE</h1>
+      <div class="input-container">
+        <label for="player-one">Player One</label>
+        <input type="text" id="player-one" name="player-one" /><br />
+        <label for="player-two">Player Two</label>
+        <input type="text" id="player-two" name="player-two" /><br />
+        <input type="submit" value="start" id="start-btn" class="btn" />
+      </div>
+      <p class="message"></p>
       <div class="board"></div>
-    </div>
+      <button id="restart-btn" class="btn">Restart</button>
+    </main>
   </body>
 </html>
