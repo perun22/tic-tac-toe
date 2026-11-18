@@ -1,5 +1,3 @@
-// create a board
-
 function Gameboard() {
   const board = [];
 
@@ -125,7 +123,7 @@ function GameController(
   };
 
   let gameOver = false;
-  let gameUpdates = `It's ${activePlayer.name}'s turn`;
+  let gameUpdates = `${activePlayer.name}'s turn`;
 
   const getGameOver = () => gameOver;
   const getGameUpdates = () => gameUpdates;
@@ -147,7 +145,7 @@ function GameController(
       return true;
     } else {
       switchPlayerTurn();
-      gameUpdates = `It's ${activePlayer.name}'s turn`;
+      gameUpdates = `${activePlayer.name}'s turn`;
     }
   };
 
@@ -157,17 +155,13 @@ function GameController(
     board.resetBoard();
     gameOver = false;
     activePlayer = players[0];
-    gameUpdates = `It's ${activePlayer.name}'s turn`;
+    gameUpdates = `${activePlayer.name}'s turn`;
   };
 
   return {
     playRound,
     setNames,
-    getActivePlayer,
     getBoard: board.getBoard,
-    checkWinner,
-    checkDraw,
-    getGameOver,
     getGameUpdates,
     resetGame,
   };
@@ -213,21 +207,18 @@ function ScreenController() {
 
   const playerOne = document.getElementById("player-one");
   const playerTwo = document.getElementById("player-two");
+
+  const resetInputs = () => {
+    playerOne.value = "";
+    playerTwo.value = "";
+  };
+
   startBtn.addEventListener("click", () => {
     game.setNames(playerOne.value, playerTwo.value);
     game.getGameUpdates;
     game.resetGame();
     updateScreen();
-  });
-  const resetInputs = () => {
-    playerOne.value = "";
-    playerTwo.value = "";
-  };
-  const restartBtn = document.getElementById("restart-btn");
-  restartBtn.addEventListener("click", () => {
-    game.resetGame();
     resetInputs();
-    updateScreen();
   });
 
   updateScreen();

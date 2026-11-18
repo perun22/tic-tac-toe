@@ -9,17 +9,24 @@
   </head>
   <body>
     <main class="container">
-      <h1 class="title">TIC TAC TOE</h1>
+      <h1 class="title">TIC-TAC-TOE</h1>
       <div class="input-container">
-        <label for="player-one">Player One</label>
-        <input type="text" id="player-one" name="player-one" /><br />
-        <label for="player-two">Player Two</label>
-        <input type="text" id="player-two" name="player-two" /><br />
-        <input type="submit" value="start" id="start-btn" class="btn" />
+        <input
+          type="text"
+          id="player-one"
+          name="player-one"
+          placeholder="Player One name"
+        />
+        <input
+          type="text"
+          id="player-two"
+          name="player-two"
+          placeholder="Player Two name"
+        />
+        <button id="start-btn" class="btn">Start / Restart</button>
       </div>
       <p class="message"></p>
       <div class="board"></div>
-      <button id="restart-btn" class="btn">Restart</button>
     </main>
   </body>
 </html>
